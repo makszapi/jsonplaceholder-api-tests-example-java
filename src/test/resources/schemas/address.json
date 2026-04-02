@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "address.json",
+  "type": "object",
+  "properties": {
+    "street": { "type": "string" },
+    "suite": { "type": "string" },
+    "city": { "type": "string" },
+    "zipcode": { "type": "string" },
+    "geo": { "$ref": "geo.json" }
+  },
+  "required": ["street", "suite", "city", "zipcode", "geo"],
+  "additionalProperties": false
+}

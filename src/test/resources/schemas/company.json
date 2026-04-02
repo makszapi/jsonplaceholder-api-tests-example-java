@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "company.json",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "catchPhrase": { "type": "string" },
+    "bs": { "type": "string" }
+  },
+  "required": ["name", "catchPhrase", "bs"],
+  "additionalProperties": false
+}
