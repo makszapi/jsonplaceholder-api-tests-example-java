@@ -45,5 +45,5 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-### Allure results ###
-/allure-results/
+### Test results ###
+/test-results/
