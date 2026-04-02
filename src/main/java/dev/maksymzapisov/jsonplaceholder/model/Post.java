@@ -1,5 +1,7 @@
 package dev.maksymzapisov.jsonplaceholder.model;
 
+import java.util.Objects;
+
 public class Post {
 
     private int userId;
@@ -27,6 +29,20 @@ public class Post {
 
     public String getBody() { return body; }
     public void setBody(String body) { this.body = body; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Post post = (Post) o;
+        return userId == post.userId && id == post.id &&
+                Objects.equals(title, post.title) && Objects.equals(body, post.body);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, id, title, body);
+    }
 
     @Override
     public String toString() {
