@@ -1,51 +1,36 @@
 package dev.maksymzapisov.jsonplaceholder.data;
 
-import dev.maksymzapisov.jsonplaceholder.model.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import dev.maksymzapisov.jsonplaceholder.model.Comment;
+import dev.maksymzapisov.jsonplaceholder.model.Post;
+import dev.maksymzapisov.jsonplaceholder.model.User;
+
+import java.io.IOException;
 
 public final class TestDataProvider {
+
+    private static final ObjectMapper MAPPER = new ObjectMapper();
 
     private TestDataProvider() {
     }
 
     public static User getExistingUser() {
-        Geo geo = new Geo(
-                "24.6463",
-                "-168.8889"
-        );
-
-        Address address = new Address(
-                "Dayna Park",
-                "Suite 449",
-                "Bartholomebury",
-                "76495-3109",
-                geo
-        );
-
-        Company company = new Company(
-                "Yost and Sons",
-                "Switchable contextually-based project",
-                "aggregate real-time technologies"
-        );
-
-        return new User(
-                9,
-                "Glenna Reichert",
-                "Delphine",
-                "Chaim_McDermott@dana.io",
-                address,
-                "(775)976-6794 x41206",
-                "conrad.com",
-                company
-        );
+        return fromJson(TestDataConstants.EXISTING_USER_JSON, User.class);
     }
 
     public static Post getPostFromExistingUser() {
-        int userId = getExistingUser().getId();
-        return new Post(
-                userId,
-                81,
-                "tempora rem veritatis voluptas quo dolores vero",
-                "facere qui nesciunt est voluptatum voluptatem nisi\nsequi eligendi necessitatibus ea at rerum itaque\nharum non ratione velit laboriosam quis consequuntur\nex officiis minima doloremque voluptas ut aut"
-        );
+        return fromJson(TestDataConstants.POST_FROM_EXISTING_USER_JSON, Post.class);
+    }
+
+    public static Comment getCommentFromPostsFromExistingUser() {
+        return fromJson(TestDataConstants.COMMENT_FOR_POST_FROM_EXISTING_USER_JSON, Comment.class);
+    }
+
+    private static <T> T fromJson(String json, Class<T> type) {
+        try {
+            return MAPPER.readValue(json, type);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to deserialize test data into " + type.getSimpleName(), e);
+        }
     }
 }
