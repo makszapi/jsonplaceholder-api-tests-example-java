@@ -14,6 +14,7 @@ public final class DefaultJsonSpecs {
     public static RequestSpecification defaultJsonRequestSpec() {
 
         return new RequestSpecBuilder()
+                .addRequestSpecification(ApiClientContext.apply())
                 .setContentType(ContentType.JSON)
                 .build();
     }
