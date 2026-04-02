@@ -25,4 +25,11 @@ public final class DefaultJsonSpecs {
                 .build();
     }
 
+    public static ResponseSpecification notFoundJsonResponseSpec() {
+        return new ResponseSpecBuilder()
+                .expectContentType(ContentType.JSON)
+                .expectStatusCode(HttpStatus.SC_NOT_FOUND)
+                .build();
+    }
+
 }
