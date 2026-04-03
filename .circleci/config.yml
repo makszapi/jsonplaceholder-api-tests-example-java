@@ -32,32 +32,36 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "build.gradle" }}
+            - v1-dependencies-{{ checksum "build.gradle.kts" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: gradle dependencies
+      - run: ./gradlew dependencies
 
       - save_cache:
           paths:
             - ~/.gradle
-          key: v1-dependencies-{{ checksum "build.gradle" }}
+          key: v1-dependencies-{{ checksum "build.gradle.kts" }}
 
       # run tests!
       - run: 
           name: Run all tests
-          command: gradle test
+          command: ./gradlew test
       
       - run:
           name: Save test results
           command: |
             mkdir -p ~/test-results/junit/
-            find . -type f -regex ".*/test-results/junit/xml/test/.*xml" -exec cp {} ~/test-results/junit/ \;
+            find . -type f -regex ".*/test-results/junit/test/xml/.*xml" -exec cp {} ~/test-results/junit/ \;
+            cp -r test-results/allure-results ~/test-results/allure-results
+            cp -r test-results/junit/test/html ~/test-results/html
           when: always
+
       - store_test_results:
           path: ~/test-results
+
       - store_artifacts:
-          path: /test-results
+          path: test-results
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/guides/orchestrate/workflows/ & https://circleci.com/docs/reference/configuration-reference/#workflows
