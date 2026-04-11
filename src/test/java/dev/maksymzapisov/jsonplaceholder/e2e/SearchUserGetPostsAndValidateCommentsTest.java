@@ -32,43 +32,29 @@ public class SearchUserGetPostsAndValidateCommentsTest extends BaseApiTest {
         User existingUser = TestDataProvider.getExistingUser();
 
         Response usersResponse = userClient.getUsersByQueryParams(Map.of("username", existingUser.getUsername()));
-
         usersResponse.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
-
+                .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
         List<User> foundUsers = ResponseExtractors.asList(usersResponse, User.class);
-
         assertThat(foundUsers)
                 .isNotEmpty()
                 .hasSize(1)
                 .contains(existingUser);
 
         User foundUser = foundUsers.getFirst();
-
         Response postsResponse = postClient.getPostsByQueryParams(Map.of("userId", String.valueOf(foundUser.getId())));
-
         postsResponse.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
-
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
         List<Post> foundUserPosts = ResponseExtractors.asList(postsResponse, Post.class);
-
         assertThat(foundUserPosts)
                 .isNotEmpty()
                 .hasSizeGreaterThanOrEqualTo(1)
                 .allMatch(post -> post.getUserId() == foundUser.getId());
 
-
         foundUserPosts.forEach(post -> {
             Response commentsResponse = postClient.getCommentsForPost(post.getId());
-
             commentsResponse.then()
-                        .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                        .extract();
-
+                        .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
             List<Comment> foundCommentsForPost = ResponseExtractors.asList(commentsResponse, Comment.class);
-
             assertThat(foundCommentsForPost)
                     .isNotEmpty()
                     .hasSizeGreaterThanOrEqualTo(1)

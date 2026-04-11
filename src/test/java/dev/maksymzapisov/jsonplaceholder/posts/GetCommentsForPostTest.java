@@ -48,8 +48,7 @@ public class GetCommentsForPostTest extends BaseApiTest {
          Response response = postClient.getCommentsForPost("invalidId");
 
          response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
          List<Comment> comments = ResponseExtractors.asList(response, Comment.class);
 
