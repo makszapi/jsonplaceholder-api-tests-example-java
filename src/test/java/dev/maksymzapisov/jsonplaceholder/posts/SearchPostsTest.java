@@ -43,8 +43,7 @@ public class SearchPostsTest extends BaseApiTest {
         Response response = postClient.getPostsByQueryParams(Map.of("id", String.valueOf(existingPost.getId())));
 
         response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<Post> foundPosts = ResponseExtractors.asList(response, Post.class);
 
@@ -62,8 +61,7 @@ public class SearchPostsTest extends BaseApiTest {
         Response response = postClient.getPostsByQueryParams(params);
 
         response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<Post> foundPosts = ResponseExtractors.asList(response, Post.class);
 
@@ -86,8 +84,7 @@ public class SearchPostsTest extends BaseApiTest {
         Response response = postClient.getPostsByQueryParams(params);
 
         response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<Post> foundPosts = ResponseExtractors.asList(response, Post.class);
 
@@ -104,8 +101,7 @@ public class SearchPostsTest extends BaseApiTest {
         Response response = postClient.getPostsByQueryParams(Map.of("title", "nonExistentTitle"));
 
         response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<Post> foundPosts = ResponseExtractors.asList(response, Post.class);
 
@@ -120,8 +116,7 @@ public class SearchPostsTest extends BaseApiTest {
         Response response = postClient.getPostsByQueryParams(params);
 
         response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<Post> foundPosts = ResponseExtractors.asList(response, Post.class);
 

@@ -51,8 +51,7 @@ public class SearchUsersTest extends BaseApiTest {
         Response response = userClient.getUsersByQueryParams(params);
 
         response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<User> foundUsers = ResponseExtractors.asList(response, User.class);
 
@@ -71,8 +70,7 @@ public class SearchUsersTest extends BaseApiTest {
         Response response = userClient.getUsersByQueryParams(params);
 
         response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<User> foundUsers = ResponseExtractors.asList(response, User.class);
 
@@ -94,8 +92,7 @@ public class SearchUsersTest extends BaseApiTest {
         Response response = userClient.getUsersByQueryParams(params);
 
         response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<User> foundUsers = ResponseExtractors.asList(response, User.class);
 
@@ -113,8 +110,7 @@ public class SearchUsersTest extends BaseApiTest {
         Response response = userClient.getUsersByQueryParams(Map.of("username", "nonExistentUser"));
 
         response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<User> foundUsers = ResponseExtractors.asList(response, User.class);
 
@@ -129,8 +125,7 @@ public class SearchUsersTest extends BaseApiTest {
         Response response = userClient.getUsersByQueryParams(params);
 
         response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<User> foundUsers = ResponseExtractors.asList(response, User.class);
 

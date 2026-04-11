@@ -49,8 +49,7 @@ public class SearchCommentsForPostTest extends BaseApiTest {
                 );
 
         response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<Comment> foundComments = ResponseExtractors.asList(response, Comment.class);
 
@@ -70,8 +69,7 @@ public class SearchCommentsForPostTest extends BaseApiTest {
         Response response = postClient.getCommentsForPostByQueryParam(existingPost.getId(), params);
 
         response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<Comment> foundComments = ResponseExtractors.asList(response, Comment.class);
 
@@ -95,8 +93,7 @@ public class SearchCommentsForPostTest extends BaseApiTest {
         Response response = postClient.getCommentsForPostByQueryParam(existingPost.getId(), params);
 
         response.then()
-                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                    .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<Comment> foundComments = ResponseExtractors.asList(response, Comment.class);
 
@@ -117,8 +114,7 @@ public class SearchCommentsForPostTest extends BaseApiTest {
                 );
 
         response.then()
-                .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<Comment> foundComments = ResponseExtractors.asList(response, Comment.class);
 
@@ -133,8 +129,7 @@ public class SearchCommentsForPostTest extends BaseApiTest {
         Response response = postClient.getCommentsForPostByQueryParam(existingPost.getId(), params);
 
         response.then()
-                .spec(DefaultJsonSpecs.defaultJsonResponseSpec())
-                .extract();
+                    .spec(DefaultJsonSpecs.defaultJsonResponseSpec());
 
         List<Comment> foundComments = ResponseExtractors.asList(response, Comment.class);
 
