@@ -13,7 +13,7 @@ val commonsValidatorVersion = "1.10.1"
 val ownerVersion = "1.0.12"
 val allureVersion = "2.34.0"
 val commonsCodecVersion = "1.22.0"
-val slf4jVersion = "2.0.17"
+val slf4jVersion = "2.0.18"
 val rhinoVersion = "1.9.1"
 
 repositories {
