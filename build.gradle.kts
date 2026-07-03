@@ -6,7 +6,7 @@ group = "dev.maksymzapisov.jsonplaceholder"
 version = "1.0-SNAPSHOT"
 
 val restAssuredVersion = "6.0.0"
-val jacksonDatabindVersion = "2.21.4"
+val jacksonDatabindVersion = "2.22.0"
 val assertJVersion = "3.27.7"
 val junitVersion = "6.1.0"
 val commonsValidatorVersion = "1.10.1"
