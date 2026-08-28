@@ -30,7 +30,7 @@ To run all tests (including annotated with `Contract` and `E2E` tags), use the `
 
 ### Tech Stack
 
-Java 25, Gradle 9.3.1 (Wrapper), JUnit 6, RestAssured, AssertJ, Allure
+Java 25, Gradle 9.7.0 (Wrapper), JUnit 6, RestAssured, AssertJ, Allure
 
 ### Project Structure
 
@@ -150,4 +150,3 @@ Negative scenarios are primarily covered in atomic endpoint tests (non-E2E).
 - DTO models are strongly typed and reused across tests
 - Response extraction is centralized to reduce boilerplate in tests
 - Tests are tagged for flexible execution
-
