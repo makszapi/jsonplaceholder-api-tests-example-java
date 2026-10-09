@@ -6,14 +6,14 @@ group = "dev.maksymzapisov.jsonplaceholder"
 version = "1.0-SNAPSHOT"
 
 val restAssuredVersion = "6.0.1"
-val jacksonDatabindVersion = "2.22.2"
+val jacksonDatabindVersion = "2.22.3"
 val assertJVersion = "3.27.7"
 val junitVersion = "6.1.3"
 val commonsValidatorVersion = "1.11.0"
 val ownerVersion = "1.0.12"
-val allureVersion = "2.35.5"
+val allureVersion = "3.0.0"
 val commonsCodecVersion = "1.22.1"
-val slf4jVersion = "2.0.19"
+val slf4jVersion = "2.0.20"
 val rhinoVersion = "1.9.1"
 
 repositories {
