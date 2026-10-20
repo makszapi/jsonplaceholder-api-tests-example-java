@@ -37,7 +37,7 @@ dependencies {
     testImplementation("org.assertj:assertj-core:$assertJVersion")
     testImplementation("org.slf4j:slf4j-simple:${slf4jVersion}")
     testImplementation(platform("io.qameta.allure:allure-bom:$allureVersion"))
-    testImplementation("io.qameta.allure:allure-junit5")
+    testImplementation("io.qameta.allure:allure-jupiter")
     testImplementation(platform("org.junit:junit-bom:$junitVersion"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
