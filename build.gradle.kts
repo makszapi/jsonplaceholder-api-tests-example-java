@@ -5,7 +5,7 @@ plugins {
 group = "dev.maksymzapisov.jsonplaceholder"
 version = "1.0-SNAPSHOT"
 
-val restAssuredVersion = "6.0.1"
+val restAssuredVersion = "6.1.0"
 val jacksonDatabindVersion = "2.22.3"
 val assertJVersion = "3.27.7"
 val junitVersion = "6.1.3"
