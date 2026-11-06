@@ -5,14 +5,14 @@ plugins {
 group = "dev.maksymzapisov.jsonplaceholder"
 version = "1.0-SNAPSHOT"
 
-val restAssuredVersion = "6.0.1"
-val jacksonDatabindVersion = "2.22.3"
+val restAssuredVersion = "6.3.0"
+val jacksonDatabindVersion = "2.22.4"
 val assertJVersion = "3.27.7"
 val junitVersion = "6.1.3"
 val commonsValidatorVersion = "1.11.0"
 val ownerVersion = "1.0.12"
 val allureVersion = "3.0.0"
-val commonsCodecVersion = "1.22.1"
+val commonsCodecVersion = "1.23.0"
 val slf4jVersion = "2.0.20"
 val rhinoVersion = "1.9.1"
 
